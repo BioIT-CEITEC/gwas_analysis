@@ -27,40 +27,11 @@
     "requested_params": [
       "organism",
       "assembly",
-      "release",
-      "lib_ROI",
-      "tumor_normal_paired",
-      "calling_type",
-      "format"
+      "release"
     ],
     "gui_params" : {
       "detailed": {
-        "use_cohort_data": {
-          "label": "Load variants from previous experiments for annotations. need file: cohort_data/cohort_variants.tsv",
-          "type": "bool",
-          "default": false
-        },
-        "create_cohort_data": {
-          "label": "Create info about the variants from current and previous samples. create file: cohort_data/cohort_variants.tsv",
-          "type": "bool",
-          "default": true
-        }
-      },
-      "samples": {
-        "donor": {
-          "label": "Patient ID",
-          "type": "string",
-          "default": "",
-          "conditions": {
-            "relevance": {
-              "operand": "equal",
-              "negation": false,
-              "values": {
-                "tumor_normal_paired": true
-              }
-            }
-          }
-        }
+
       }
     }
   }
