@@ -1,0 +1,66 @@
+{
+    "workflow_description": {
+      "name":"gwas_analysis",
+      "version": 1.0,
+      "label":"Genome-Wide Association Study (GWAS) Analysis",
+      "type":"gwas_analysis",
+      "run_parameters": {
+        "cpu": 10,
+        "memory": 100
+      },
+      "inputs":[
+        "germline_varcalls/{sample}/haplotypecaller/haplotypecaller.vcf"
+      ],
+      "outputs":[
+        "logs/*",
+        "config.json"
+      ],
+      "report_index": "annotate/all_variants.annotated.tsv_summary.html",
+      "reports":[
+        "annotate/all_variants.annotated.tsv_summary.html"
+      ]
+    },
+    "general_params": [
+      "entity_name",
+      "sample_name"
+    ],
+    "requested_params": [
+      "organism",
+      "assembly",
+      "release",
+      "lib_ROI",
+      "tumor_normal_paired",
+      "calling_type",
+      "format"
+    ],
+    "gui_params" : {
+      "detailed": {
+        "use_cohort_data": {
+          "label": "Load variants from previous experiments for annotations. need file: cohort_data/cohort_variants.tsv",
+          "type": "bool",
+          "default": false
+        },
+        "create_cohort_data": {
+          "label": "Create info about the variants from current and previous samples. create file: cohort_data/cohort_variants.tsv",
+          "type": "bool",
+          "default": true
+        }
+      },
+      "samples": {
+        "donor": {
+          "label": "Patient ID",
+          "type": "string",
+          "default": "",
+          "conditions": {
+            "relevance": {
+              "operand": "equal",
+              "negation": false,
+              "values": {
+                "tumor_normal_paired": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
