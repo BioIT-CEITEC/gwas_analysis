@@ -30,8 +30,32 @@
       "release"
     ],
     "gui_params" : {
-      "detailed": {
-
+      "primary": {
+        "plink_geno_threshold": 0.02,
+        "plink_mind_threshold": 0.02,
+        "plink_max_female": 0.35,
+        "plink_min_male": 0.65,
+        "plink_maf": 0.05
+      }
+    },
+    "samples": {
+      "sex": {
+         "label": "Gender",
+         "type": "enum",
+         "default": "female",
+         "list": {
+           "male": 1,
+           "female": 2
+         },
+      "phenotype": {
+         "label": "Phenotype",
+         "type": "enum",
+         "default": "control",
+         "list": {
+           "control": 0,
+           "condition": 1
+          }
+        }
       }
     }
   }
