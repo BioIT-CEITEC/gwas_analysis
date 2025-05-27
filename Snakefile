@@ -24,13 +24,22 @@ sample_tab = BR.load_sample()
 
 config = BR.load_organism()
 
+if not "format" in config:
+    config["format"] = "default"
+if not "not_use_merged" in config:
+    config["not_use_merged"] = False
+if not "min_variant_frequency" in config:
+    config["min_variant_frequency"] = 0
+
+
 wildcard_constraints:
     sample = "|".join(sample_tab.sample_name),
 
 
 ##### Target rules #####
 rule all:
-    input:
+    input:"variant_postprocessing/final_founders_filtered.bed",
+          "association_results/association_results.assoc"
 
 ##### Modules #####
 
