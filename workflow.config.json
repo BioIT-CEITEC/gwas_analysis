@@ -1,9 +1,9 @@
 {
   "workflow_description": {
-    "name":"differential_expression",
-    "version": 3.0,
-    "label":"Differential expression",
-    "type":"differential_expression",
+    "name":"gwas_analysis",
+    "version": 1.0,
+    "label":"GWAS Analysis",
+    "type":"gwas_analysis",
     "run_parameters": {
       "cpu": 2,
       "memory": 65
