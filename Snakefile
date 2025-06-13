@@ -17,7 +17,6 @@ sample_tab = pd.DataFrame.from_dict(config["samples"],orient="index")
 wildcard_constraints:
     sample = "|".join(sample_tab.sample_name),
 
-
 ##### Target rules #####
 rule all:
     input:"variant_postprocessing/final_founders_filtered.bed",
