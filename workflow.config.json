@@ -31,9 +31,9 @@
     ],
     "gui_params" : {
       "primary": {
-        "plink_geno_threshold": 0.02,
-        "plink_mind_threshold": 0.02,
-        "plink_max_female": 0.35,
+        "plink_geno_threshold": 0.99,
+        "plink_mind_threshold": 0.99,
+        "plink_max_female": 0.65,
         "plink_min_male": 0.65,
         "plink_maf": 0.05
       }
@@ -52,8 +52,8 @@
          "type": "enum",
          "default": "control",
          "list": {
-           "control": 0,
-           "condition": 1
+           "control": 1,
+           "condition": 2
           }
         }
       }
