@@ -1,6 +1,6 @@
 rule merge_vcfs:
     input:
-        vcfs = expand("germline_varcalls/{sample}.g.vcf.gz", sample=sample_tab.sample_name)
+        vcfs = expand("/germline_varcalls/{sample}.g.vcf.gz", sample=sample_tab.sample_name)
     output:
         merged_vcfs = "variant_postprocessing/merged_variants.g.vcf.gz",
         annotated_vcfs = "variant_postprocessing/merged_annotated_variants.g.vcf.gz"
@@ -52,8 +52,7 @@ rule plink_qc_control:
         pruned = "variant_postprocessing/all_samples_pruned.het",
         founders_filt = "variant_postprocessing/final_founders_filtered.bed",
         founders_txt = "variant_postprocessing/final_founders_effect.genome",
-        founders_mds = "variant_postprocessing/final_founders_filtered_mds.mds",
-        founders_covar = "variant_postprocessing/covar_mds.txt"
+        founders_mds = "variant_postprocessing/final_founders_filtered_mds.mds"
     log:
         "logs/plink_qc_control.log"
     params:
@@ -61,7 +60,7 @@ rule plink_qc_control:
         max_female = config["plink_max_female"],
         min_male = config["plink_min_male"]
     conda: "../wrappers/plink/env.yaml"
-    script: "../wrappers/plink/qc_control.py"
+    script: "../wrappers/plink/qc_ctrl.py"
 
 rule association_studies:
   input:
