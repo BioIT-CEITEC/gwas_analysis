@@ -27,7 +27,7 @@ f = open(log_filename, 'at')
 f.write("## CONDA: "+version+"\n")
 f.close()
 
-command = "plink --vcf " + snakemake.input.merged_vcfs + "  --split-x b38 'no-fail' --update-sex " + snakemake.output.sex_file + " --set-missing-var-ids @:#[b38]\$1,\$2 --make-bed --out " + str(snakemake.output.tmp_bed).replace(".bed","") + "  >> " + log_filename + " 2>&1"
+command = "plink --vcf " + snakemake.input.merged_vcfs + " --split-x b37 'no-fail' --update-sex " + snakemake.output.sex_file + " --set-missing-var-ids @:#[b37]\\$1,\\$2 --make-bed --out " + str(snakemake.output.tmp_bed).replace(".bed","") + "  >> " + log_filename + " 2>&1"
 f = open(log_filename, 'at')
 f.write("## COMMAND: "+command+"\n")
 f.close()
@@ -51,8 +51,8 @@ f.write("## COMMAND: "+command+"\n")
 f.close()
 shell(command)
 
-command = "plink --bfile " + str(snakemake.output.miss_filt).replace(".bed","") + " --check-sex " + str(snakemake.params.max_female) + " " + str(snakemake.params.min_male) + " >> " + log_filename + " 2>&1 "
-f = open(log_filename, 'at')
-f.write("## COMMAND: "+command+"\n")
-f.close()
-shell(command)
+#command = "plink --bfile " + str(snakemake.output.miss_filt).replace(".bed","") + " --check-sex " + str(snakemake.params.max_female) + " " + str(snakemake.params.min_male) + " >> " + log_filename + " 2>&1 "
+#f = open(log_filename, 'at')
+#f.write("## COMMAND: "+command+"\n")
+#f.close()
+#shell(command)

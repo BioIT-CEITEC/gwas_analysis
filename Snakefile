@@ -14,14 +14,6 @@ os.makedirs(GLOBAL_TMPD_PATH, exist_ok=True)
 
 sample_tab = pd.DataFrame.from_dict(config["samples"],orient="index")
 
-if not "format" in config:
-    config["format"] = "default"
-if not "not_use_merged" in config:
-    config["not_use_merged"] = False
-if not "min_variant_frequency" in config:
-    config["min_variant_frequency"] = 0
-
-
 wildcard_constraints:
     sample = "|".join(sample_tab.sample_name),
 

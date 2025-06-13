@@ -71,3 +71,5 @@ rule association_studies:
   log: "logs/association_analysis.log"
   conda: "../wrappers/plink/env.yaml"
   script: "../wrappers/plink/association.py"
+    
+

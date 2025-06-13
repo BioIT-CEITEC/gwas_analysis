@@ -10,6 +10,7 @@ manhattan_plot <- function(args) {
   
   manhattan(results_as, chr="CHR", bp="BP", p="P", snp="SNP",
             main="Manhattan plot",
+            ylim = c(0, 12)
             )
   dev.off()
   
