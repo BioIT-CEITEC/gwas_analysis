@@ -1,6 +1,21 @@
+rule create_tbi_index:
+    input:
+        vcf = "/germline_varcalls/{sample}.g.vcf.gz"
+    output:
+        tbi = "/germline_varcalls/{sample}.g.vcf.gz.tbi"
+    log:
+        "logs/{sample}/create_tbi_index.log"
+    threads: 10
+    conda: "../wrappers/merge_vcfs/env.yaml"
+    shell:
+        """
+        tabix -p vcf {input.vcf} >> {log} 2>&1
+        """
+
 rule merge_vcfs:
     input:
-        vcfs = expand("/germline_varcalls/{sample}.g.vcf.gz", sample=sample_tab.sample_name)
+        vcfs = expand("/germline_varcalls/{sample}.g.vcf.gz", sample=sample_tab.sample_name),
+        tbi = expand("/germline_varcalls/{sample}.g.vcf.gz.tbi", sample=sample_tab.sample_name)
     output:
         merged_vcfs = "variant_postprocessing/merged_variants.g.vcf.gz",
         annotated_vcfs = "variant_postprocessing/merged_annotated_variants.g.vcf.gz"
@@ -71,5 +86,3 @@ rule association_studies:
   log: "logs/association_analysis.log"
   conda: "../wrappers/plink/env.yaml"
   script: "../wrappers/plink/association.py"
-    
-
