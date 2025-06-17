@@ -61,7 +61,7 @@
       "sex": {
         "label": "Gender",
         "type": "enum",
-        "default": "female",
+        "default": "2",
         "list": {
           "1": "male",
           "2": "female"
@@ -70,7 +70,7 @@
       "phenotype": {
         "label": "Phenotype",
         "type": "enum",
-        "default": "control",
+        "default": "0",
         "list": {
           "0": "control",
           "1": "condition"
