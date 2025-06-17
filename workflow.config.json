@@ -63,8 +63,8 @@
         "type": "enum",
         "default": "female",
         "list": {
-          "male": 1,
-          "female": 2
+          "1": "male",
+          "2": "female"
         }
       },
       "phenotype": {
@@ -72,8 +72,8 @@
         "type": "enum",
         "default": "control",
         "list": {
-          "control": 1,
-          "condition": 2
+          "0": "control",
+          "1": "condition"
         }
       }
     }
