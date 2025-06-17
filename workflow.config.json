@@ -56,25 +56,25 @@
         "type": "string",
         "default": "0.05"
       }
-    }
-  },
-  "samples": {
-    "sex": {
-      "label": "Gender",
-      "type": "enum",
-      "default": "female",
-      "list": {
-        "male": 1,
-        "female": 2
-      }
     },
-    "phenotype": {
-      "label": "Phenotype",
-      "type": "enum",
-      "default": "control",
-      "list": {
-        "control": 1,
-        "condition": 2
+    "samples": {
+      "sex": {
+        "label": "Gender",
+        "type": "enum",
+        "default": "female",
+        "list": {
+          "male": 1,
+          "female": 2
+        }
+      },
+      "phenotype": {
+        "label": "Phenotype",
+        "type": "enum",
+        "default": "control",
+        "list": {
+          "control": 1,
+          "condition": 2
+        }
       }
     }
   }
