@@ -58,11 +58,8 @@
       }
     },
     "samples": {
-       "count_over": {
-        "type": "constant",
-        "default": "exon"
-      }
       "sex": {
+        "label": "Sex",
         "type": "string",
         "default": "2"
       },
