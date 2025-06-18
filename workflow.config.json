@@ -59,8 +59,7 @@
     },
     "samples": {
       "sex": {
-        "label": "Sex",
-        "type": "string",
+        "type": "constant",
         "default": "2"
       },
       "phenotype": {
