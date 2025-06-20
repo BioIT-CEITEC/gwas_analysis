@@ -9,7 +9,7 @@
       "memory": 100
     },
     "inputs": [
-      "germline_varcalls/{sample}/haplotypecaller/haplotypecaller.vcf"
+      "germline_varcalls/{sample}.g.vcf.gz"
     ],
     "outputs": [
       "logs/*",
